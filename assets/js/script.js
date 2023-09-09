@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const formData = new FormData(form);
     const json = JSON.stringify(Object.fromEntries(formData));
 
-
     if (error === 0) {
       $.ajax({
         url: "../../sendmail.php",
@@ -31,30 +30,29 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
     } else {
-      alert("Заполните обязательные поля");
+      alert("Заполните обязательные поля!");
     }
   }
 
   function formValidate() {
-    let error = 0;
-    const formReq = document.querySelectorAll('._req');
-    for (let index = 0; index < formReq.length; index++) {
-      const input = formReq[index];
-      formRemoveError(input);
+    let errors = 0;
+    const requiredFields = document.querySelectorAll('.required');
+    for (let index = 0; index < requiredFields.length; index++) {
+      const input = requiredFields[index];
+      fieldRemoveError(input);
       if (input.value === '') {
-        formAddError(input);
-        error++;
-      } else if (input.getAttribute("type") === "checkbox" && input.checked === false) {
-        isRadioChecked();
-        formAddError(input);
-        error++;
+        fieldAddError(input);
+        errors++;
+      } else if (input.getAttribute("type") === "checkbox" && !input.checked) {
+        fieldAddError(input);
+        errors++;
       } else if (input.getAttribute("type") === "radio" && !isRadioChecked()) {
-        formAddError(input);
-        error++;
+        fieldAddError(input);
+        errors++;
       }
     }
 
-    return error;
+    return errors;
   }
 
   function isRadioChecked() {
@@ -67,11 +65,11 @@ document.addEventListener('DOMContentLoaded', function () {
     return false;
   }
 
-  function formAddError(input) {
+  function fieldAddError(input) {
     input.classList.add('error');
   }
 
-  function formRemoveError(input) {
+  function fieldRemoveError(input) {
     input.classList.remove('error');
   }
 })

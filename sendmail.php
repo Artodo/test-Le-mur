@@ -14,9 +14,9 @@ empty($_POST['communication-method']) )
    $communicationMethod = strip_tags(htmlspecialchars($_POST['communication-method']));
 
       
-   $to = 'Tavebran@gmail.com';
+   $to = 'support@lemurteam.ru';
    $email_subject = "Заявка с формы обратной связи от $name";
    $email_body = "Вы получили заявку от $name, номер телефона: $phone (способ связи: $communicationMethod).\n\n";
-   $headers = "From: test@le-mur.com\n";
+   $headers = "From: test@lemurteam.ru\n";
    $res = mail($to,$email_subject,$email_body,$headers);
    return $res;

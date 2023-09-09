@@ -18,19 +18,19 @@
 
       <p class="feedback__text">Оставьте ваши контактные данные и мы свяжемся с вами в течение одного рабочего дня</p>
 
-      <input type="text" placeholder="Имя" name="name" id="name" class="feedback__input _req">
-      <input type="text" name="phone" class="feedback__input _req" id="phone" placeholder="+7 (___) ___-__-__">
+      <input type="text" name="name" class="feedback__input required" id="name" placeholder="Имя">
+      <input type="text" name="phone" class="feedback__input required" id="phone" placeholder="+7 (___) ___-__-__">
 
       <p class="feedback__text">Выберите удобный способ связи:</p>
 
       <div class="feedback__communication">
         <label class="feedback__label">
-          <input type="radio" name="communication-method" id="call" class="feedback__radio _req" value="по телефону">
+          <input type="radio" name="communication-method" id="call" class="feedback__radio required" value="по телефону">
           <span>перезвонить</span>
        </label>
 
         <label class="feedback__label">
-          <input type="radio" name="communication-method" id="message" class="feedback__radio _req"  value="в Telegram">
+          <input type="radio" name="communication-method" id="message" class="feedback__radio required"  value="в Telegram">
           <span>написать в Telegram</span>
       </label>
       </div>
@@ -38,7 +38,7 @@
       <input type="submit" class="feedback__button" id="submitBtn" value="Отправить">
 
       <div>
-        <input type="checkbox" name="agree" id="agree" value="yes" class="feedback__checkbox _req">
+        <input type="checkbox" name="agree" id="agree" value="yes" class="feedback__checkbox required">
         <label for="agree">
           <span>я согласен c <a href="#" id="processingRules">правилами обработки</a> моих персональных данных</span>
         </label>

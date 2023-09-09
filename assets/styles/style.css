@@ -1,5 +1,21 @@
+body {
+  font-size: 15px;
+  font-family: "Montserrat";
+  margin: 0;
+}
+
 a {
   color: black;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 40px;
+  margin: 0 0 6px;
 }
 
 .main-screen {
@@ -19,19 +35,6 @@ a {
   max-width: 400px;
 }
 
-body {
-  font-size: 15px;
-  font-family: "Montserrat";
-  margin: 0;
-}
-
-
-h1 {
-  font-weight: 600;
-  font-size: 40px;
-  margin: 0 0 6px;
-}
-
 .feedback__text {
   margin: 0 0 16px;
 }
@@ -46,7 +49,6 @@ input::-moz-placeholder,
 input::-webkit-input-placeholder {
   color: #A29F9E !important;
 }
-
 
 .feedback__input {
   box-sizing: border-box;
@@ -63,7 +65,7 @@ input::-webkit-input-placeholder {
 }
 
 
-.name:focus::placeholder {
+.feedback__input:focus::placeholder {
   color: transparent;
 }
 
@@ -86,7 +88,6 @@ input::-webkit-input-placeholder {
   box-shadow: 0px 0px 80px 0px #00000066;
 }
 
-
 .feedback__button {
   height: 60px;
   font-size: 20px;
@@ -104,11 +105,11 @@ input::-webkit-input-placeholder {
   transition: all 0.6s;
 }
 
-
-.feedback__button:hover {
+.feedback__button:hover,
+.feedback__button:focus,
+.feedback__button:active {
   background: #DB0000;
 }
-
 
 .feedback__checkbox {
   position: absolute;
@@ -153,8 +154,6 @@ input::-webkit-input-placeholder {
   box-shadow: 0px 0px 20px 0px #FF00004D;
 }
 
-
-/* /////////////////////////////////////////////////////////////// */
 .feedback__label>input {
   position: absolute;
   z-index: -1;
@@ -167,7 +166,6 @@ input::-webkit-input-placeholder {
   user-select: none;
   cursor: pointer;
 }
-
 
 .feedback__label>span::before {
   cursor: pointer;
@@ -186,7 +184,6 @@ input::-webkit-input-placeholder {
   background-size: 50% 50%;
 }
 
-
 .feedback__label>input:not(:disabled):active+span::before {
   background-color: #b3d7ff;
   border-color: #b3d7ff;
@@ -196,7 +193,6 @@ input::-webkit-input-placeholder {
   border: 3px solid #ffffff;
   width: 24px;
   height: 24px;
-
   background-color: #FF0000;
 }
 
@@ -205,12 +201,10 @@ input::-webkit-input-placeholder {
   box-shadow: 0px 0px 20px 0px #FF00004D;
 }
 
-
 .feedback__label>input:disabled+span::before {
   background-color: #e9ecef;
 }
 
-/* /////////////////////////////////// */
 .rules {
   display: none;
   width: 100%;
@@ -224,26 +218,19 @@ input::-webkit-input-placeholder {
   margin-top: 41px;
 }
 
-
-
-.active {
+.rules.active {
   display: block;
 }
-
 
 .error {
   border: 1px solid #FF0000;
   box-shadow: 0px 0px 30px 0px #FF000033;
-
-
-
 }
 
 .error-radio {
   border: 1px solid #FF0000;
   box-shadow: 0px 0px 20px 0px #FF00004D;
 }
-
 
 .success {
   color: green;
@@ -253,12 +240,11 @@ input::-webkit-input-placeholder {
   color: red;
 }
 
-
-
 @media screen and (max-width: 576px) {
-  .main-screen{
+  .main-screen {
     padding: 25px 30px;
   }
+
   h1 {
     font-size: 30px;
   }
@@ -271,16 +257,16 @@ input::-webkit-input-placeholder {
     flex-direction: column;
   }
 
-  .name,
   .feedback__input {
     font-size: 15px;
     height: 50px;
   }
 
-  .rules{
-    padding: 10px;
-  }
-  .feedback__button{
+  .feedback__button {
     height: 50px;
+  }
+
+  .rules {
+    padding: 10px;
   }
 }
