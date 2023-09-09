@@ -1,5 +1,5 @@
 <?php
-
+var_dump($_POST);
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 

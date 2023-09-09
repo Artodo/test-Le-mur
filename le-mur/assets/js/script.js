@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (error === 0) {
       $.ajax({
-        url: "../../sendmail.php",
+        url: "sendmail.php",
         type: "POST",
         data: json,
         contentType: "application/json",
