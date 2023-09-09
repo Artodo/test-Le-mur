@@ -1,4 +1,3 @@
-"use strict"
 // modal
 const rules = document.querySelector(".rules");
 const processingRules = document.querySelector("#processingRules");
@@ -74,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (error === 0) {
       $.ajax({
-        url: "sendmail.php",
+        url: "../../sendmail.php",
         type: "POST",
         data: json,
         contentType: "application/json",
@@ -89,19 +88,6 @@ document.addEventListener('DOMContentLoaded', function () {
           form.reset();
         }
       });
-
-      // const response = await fetch('../../sendmail.php', {
-      //   method: 'POST',
-      //   body: formData
-      // });
-
-      // if (response.ok) {
-      //   let result = await response.json();
-      //   alert(result.message);
-      //   form.reset();
-      // } else {
-      //   alert('Ошибка');
-      // }
 
     } else {
       alert("Заполните обязательные поля");
