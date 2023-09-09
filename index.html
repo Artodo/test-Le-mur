@@ -4,45 +4,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./assets/styles/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/styles/style.css">
   <title>Обратная связь</title>
 </head>
 
 <body>
-  <section class="first-screen">
-    <form class="feedback" id="form" name="feedbackForm" data-netlify="true">
+  <section class="main-screen">
+    <form class="feedback" id="form" name="feedbackForm">
       <h1>Обратная связь</h1>
+
       <p class="feedback__text">Оставьте ваши контактные данные и мы свяжемся с вами в течение одного рабочего дня</p>
+
       <input type="text" placeholder="Имя" name="name" id="name" class="name _req">
-      <input type="text" name="phone" class="phone _req" id="phone" placeholder="+7 (___) ___-__-__">
-      <p class="communication-method-title">Выберите удобный способ связи:</p>
-      <div class="communication-method-wrapper">
-        <label class="communication-method__block">
-          <input type="radio" name="communication-method" id="call" class="communication-method _req">
+      <input type="text" name="phone" class="feedback__input _req" id="phone" placeholder="+7 (___) ___-__-__">
+
+      <p class="feedback__text">Выберите удобный способ связи:</p>
+
+      <div class="feedback__communication">
+        <label class="feedback__label">
+          <input type="radio" name="communication-method" id="call" class="feedback__radio _req" value="по телефону">
           <span>перезвонить</span>
-       
        </label>
-        <label class="communication-method__block">
-      
-          <input type="radio" name="communication-method" id="message" class="communication-method _req">
+
+        <label class="feedback__label">
+          <input type="radio" name="communication-method" id="message" class="feedback__radio _req"  value="в Telegram">
           <span>написать в Telegram</span>
-         
       </label>
       </div>
-      <input type="submit" class="submit-btn" id="submitBtn" value="Отправить">
+
+      <input type="submit" class="feedback__button" id="submitBtn" value="Отправить">
 
       <div>
-        <input type="checkbox" name="agree" id="agree" class="custom-checkbox _req">
+        <input type="checkbox" name="agree" id="agree" value="yes" class="feedback__checkbox _req">
         <label for="agree">
           <span>я согласен c <a href="#" id="processingRules">правилами обработки</a> моих персональных данных</span>
+        </label>
       </div>
-    </label>
 
-
+      <div id="formCallback"></div>
     </form>
+
     <div class="rules">
       <p>Компания ООО «Тест» с уважением относится к информации личного характера, касающейся посетителей Сайта «lemurteam.ru» и его поддоменов (далее – «Сайт»).</p>
       <p>Настоящим компания ООО «Тест» (далее – Компания) подтверждает конфиденциальность обработки Ваших данных в соответствии с законодательством Российской Федерации в сфере защиты информации, а также в соответствии с ФЗ «О персональных данных» №152-ФЗ.</p>
@@ -63,13 +67,13 @@
       <p>Настоящая Политика может быть изменена или прекращена нами в одностороннем порядке без предварительного уведомления Пользователя. Новая редакция Политики вступает в силу с момента ее размещения на Сайте, если иное не предусмотрено новой редакцией
         Политики.
       </p>
-      <p>Политики. Действующая редакция Политики находится на Сайте в сети Интернет по адресу http://test.ru/privacy-policy.html.</p>
+      <p>Политики. Действующая редакция Политики находится на Сайте в сети Интернет по адресу <a href="http://test.ru/privacy-policy.html">http://test.ru/privacy-policy.html.</a> </p>
     </div>
   </section>
   <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-  <script src="./assets/js/script.js"></script>
   <script src="./assets/js/jquery.inputmask.js"></script>
-
+  <script src="./assets/js/phone-mask.js"></script>
+  <script src="./assets/js/script.js"></script>
 </body>
 
 </html>

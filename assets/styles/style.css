@@ -2,7 +2,7 @@ a {
   color: black;
 }
 
-.first-screen {
+.main-screen {
   max-width: 1440px;
   margin: 0 auto;
   padding: 50px 40px;
@@ -29,23 +29,26 @@ body {
 h1 {
   font-weight: 600;
   font-size: 40px;
-  margin: 0 0 6px 0;
+  margin: 0 0 6px;
 }
 
 .feedback__text {
-  margin: 0 0 16px 0;
+  margin: 0 0 16px;
 }
 
-.input {
+input {
   cursor: pointer;
 }
 
-input::placeholder {
-  color: #A29F9E;
+input::placeholder,
+input:-moz-placeholder,
+input::-moz-placeholder,
+input::-webkit-input-placeholder {
+  color: #A29F9E !important;
 }
 
 .name,
-.phone {
+.feedback__input {
   box-sizing: border-box;
   width: 100%;
   height: 60px;
@@ -64,27 +67,27 @@ input::placeholder {
   color: transparent;
 }
 
-.communication-method-wrapper {
+.feedback__communication {
   display: flex;
   justify-content: space-between;
 }
 
-.communication-method-title {
+.feedback__text {
   margin: 10px 0 16px 0;
 }
 
-.communication-method__block {
+.feedback__label {
   display: flex;
   justify-content: space-between;
   margin-bottom: 30px;
 }
 
-.communication-method__block>input {
+.feedback__label>input {
   box-shadow: 0px 0px 80px 0px #00000066;
 }
 
 
-.submit-btn {
+.feedback__button {
   height: 60px;
   font-size: 20px;
   text-align: center;
@@ -97,28 +100,30 @@ input::placeholder {
   font-family: "Montserrat";
   font-weight: 700;
   padding: 0;
+  cursor: pointer;
+  transition: all 0.6s;
 }
 
 
-.submit-btn:hover {
+.feedback__button:hover {
   background: #DB0000;
 }
 
 
-.custom-checkbox {
+.feedback__checkbox {
   position: absolute;
   z-index: -1;
   opacity: 0;
 }
 
-.custom-checkbox+label {
+.feedback__checkbox+label {
   display: inline-flex;
   align-items: center;
   user-select: none;
   cursor: pointer;
 }
 
-.custom-checkbox+label::before {
+.feedback__checkbox+label::before {
   content: '';
   display: inline-block;
   width: 30px;
@@ -134,7 +139,7 @@ input::placeholder {
   background-size: 50% 50%;
 }
 
-.custom-checkbox:checked+label::before {
+.feedback__checkbox:checked+label::before {
   border-color: #A29F9E4D;
   background-color: #FF0000;
   width: 24px;
@@ -143,20 +148,20 @@ input::placeholder {
   border-radius: 5px;
 }
 
-.custom-checkbox.error+label::before{
+.feedback__checkbox.error+label::before {
   border: 1px solid #FF0000;
   box-shadow: 0px 0px 20px 0px #FF00004D;
 }
 
 
 /* /////////////////////////////////////////////////////////////// */
-.communication-method__block>input {
+.feedback__label>input {
   position: absolute;
   z-index: -1;
   opacity: 0;
 }
 
-.communication-method__block>span {
+.feedback__label>span {
   display: inline-flex;
   align-items: center;
   user-select: none;
@@ -164,7 +169,7 @@ input::placeholder {
 }
 
 
-.communication-method__block>span::before {
+.feedback__label>span::before {
   cursor: pointer;
   content: '';
   display: inline-block;
@@ -182,12 +187,12 @@ input::placeholder {
 }
 
 
-.communication-method__block>input:not(:disabled):active+span::before {
+.feedback__label>input:not(:disabled):active+span::before {
   background-color: #b3d7ff;
   border-color: #b3d7ff;
 }
 
-.communication-method__block>input:checked+span::before {
+.feedback__label>input:checked+span::before {
   border: 3px solid #ffffff;
   width: 24px;
   height: 24px;
@@ -195,13 +200,13 @@ input::placeholder {
   background-color: #FF0000;
 }
 
-.communication-method__block>input.error+span::before{
+.feedback__label>input.error+span::before {
   border: 1px solid #FF0000;
   box-shadow: 0px 0px 20px 0px #FF00004D;
 }
 
 
-.communication-method__block>input:disabled+span::before {
+.feedback__label>input:disabled+span::before {
   background-color: #e9ecef;
 }
 
@@ -221,20 +226,61 @@ input::placeholder {
 
 
 
-.active{
+.active {
   display: block;
 }
 
 
-.error{
+.error {
   border: 1px solid #FF0000;
   box-shadow: 0px 0px 30px 0px #FF000033;
- 
+
 
 
 }
 
-.error-radio{
+.error-radio {
   border: 1px solid #FF0000;
   box-shadow: 0px 0px 20px 0px #FF00004D;
+}
+
+
+.success {
+  color: green;
+}
+
+.fail {
+  color: red;
+}
+
+
+
+@media screen and (max-width: 576px) {
+  .main-screen{
+    padding: 25px 30px;
+  }
+  h1 {
+    font-size: 30px;
+  }
+
+  body {
+    font-size: 13px;
+  }
+
+  .feedback__communication {
+    flex-direction: column;
+  }
+
+  .name,
+  .feedback__input {
+    font-size: 15px;
+    height: 50px;
+  }
+
+  .rules{
+    padding: 10px;
+  }
+  .feedback__button{
+    height: 50px;
+  }
 }
