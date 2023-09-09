@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     if (error === 0) {
-      let response = await fetch('sendmail.php', {
+      let response = await fetch('../../sendmail.php', {
         method: 'POST',
         body: formData
       });
